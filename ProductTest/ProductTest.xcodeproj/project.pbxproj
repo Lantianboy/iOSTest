@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0934AD131F74A2C600136408 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0934AD0A1F74A2C600136408 /* SVIndefiniteAnimatedView.m */; };
+		0934AD141F74A2C600136408 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0934AD0C1F74A2C600136408 /* SVProgressAnimatedView.m */; };
+		0934AD151F74A2C600136408 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0934AD0E1F74A2C600136408 /* SVProgressHUD.bundle */; };
+		0934AD161F74A2C600136408 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0934AD101F74A2C600136408 /* SVProgressHUD.m */; };
+		0934AD171F74A2C600136408 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0934AD121F74A2C600136408 /* SVRadialGradientLayer.m */; };
 		09DA67B71F316E0000BEAD92 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DA67B61F316E0000BEAD92 /* main.m */; };
 		09DA67BA1F316E0000BEAD92 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DA67B91F316E0000BEAD92 /* AppDelegate.m */; };
 		09DA67BD1F316E0000BEAD92 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DA67BC1F316E0000BEAD92 /* ViewController.m */; };
@@ -16,6 +21,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0934AD091F74A2C600136408 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		0934AD0A1F74A2C600136408 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		0934AD0B1F74A2C600136408 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		0934AD0C1F74A2C600136408 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		0934AD0D1F74A2C600136408 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		0934AD0E1F74A2C600136408 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		0934AD0F1F74A2C600136408 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		0934AD101F74A2C600136408 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		0934AD111F74A2C600136408 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		0934AD121F74A2C600136408 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		09DA67B21F316E0000BEAD92 /* ProductTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09DA67B61F316E0000BEAD92 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		09DA67B81F316E0000BEAD92 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,6 +54,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0934AD081F74A2C600136408 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				0934AD091F74A2C600136408 /* SVIndefiniteAnimatedView.h */,
+				0934AD0A1F74A2C600136408 /* SVIndefiniteAnimatedView.m */,
+				0934AD0B1F74A2C600136408 /* SVProgressAnimatedView.h */,
+				0934AD0C1F74A2C600136408 /* SVProgressAnimatedView.m */,
+				0934AD0D1F74A2C600136408 /* SVProgressHUD-Prefix.pch */,
+				0934AD0E1F74A2C600136408 /* SVProgressHUD.bundle */,
+				0934AD0F1F74A2C600136408 /* SVProgressHUD.h */,
+				0934AD101F74A2C600136408 /* SVProgressHUD.m */,
+				0934AD111F74A2C600136408 /* SVRadialGradientLayer.h */,
+				0934AD121F74A2C600136408 /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		09DA67A91F316E0000BEAD92 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +90,7 @@
 		09DA67B41F316E0000BEAD92 /* ProductTest */ = {
 			isa = PBXGroup;
 			children = (
+				0934AD081F74A2C600136408 /* SVProgressHUD */,
 				09DA67B81F316E0000BEAD92 /* AppDelegate.h */,
 				09DA67B91F316E0000BEAD92 /* AppDelegate.m */,
 				09DA67BB1F316E0000BEAD92 /* ViewController.h */,
@@ -140,6 +173,7 @@
 				09DA67C51F316E0000BEAD92 /* LaunchScreen.storyboard in Resources */,
 				09DA67C21F316E0000BEAD92 /* Assets.xcassets in Resources */,
 				09DA67C01F316E0000BEAD92 /* Main.storyboard in Resources */,
+				0934AD151F74A2C600136408 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,9 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0934AD171F74A2C600136408 /* SVRadialGradientLayer.m in Sources */,
 				09DA67BD1F316E0000BEAD92 /* ViewController.m in Sources */,
+				0934AD141F74A2C600136408 /* SVProgressAnimatedView.m in Sources */,
 				09DA67BA1F316E0000BEAD92 /* AppDelegate.m in Sources */,
 				09DA67B71F316E0000BEAD92 /* main.m in Sources */,
+				0934AD131F74A2C600136408 /* SVIndefiniteAnimatedView.m in Sources */,
+				0934AD161F74A2C600136408 /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +347,7 @@
 				09DA67CB1F316E0000BEAD92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
