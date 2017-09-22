@@ -80,7 +80,7 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
 
 
 #pragma mark - Setters
-
+//改变正显示的HUD文字
 + (void)setStatus:(NSString*)status {
     [[self sharedView] setStatus:status];
 }
@@ -197,10 +197,12 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
 
 #pragma mark - Show Methods
 
+//显示:状态是一个迅速转动的圈
 + (void)show {
     [self showWithStatus:nil];
 }
 
+//显示并且带着一个状态 maskType:状态
 + (void)showWithMaskType:(SVProgressHUDMaskType)maskType {
     SVProgressHUDMaskType existingMaskType = [self sharedView].defaultMaskType;
     [self setDefaultMaskType:maskType];
@@ -208,10 +210,11 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
     [self setDefaultMaskType:existingMaskType];
 }
 
+//显示并带着文字
 + (void)showWithStatus:(NSString*)status {
     [self showProgress:SVProgressHUDUndefinedProgress status:status];
 }
-
+//状态加文字
 + (void)showWithStatus:(NSString*)status maskType:(SVProgressHUDMaskType)maskType {
     SVProgressHUDMaskType existingMaskType = [self sharedView].defaultMaskType;
     [self setDefaultMaskType:maskType];
@@ -219,10 +222,10 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
     [self setDefaultMaskType:existingMaskType];
 }
 
+//显示进度 状态是一个进度圈
 + (void)showProgress:(float)progress {
     [self showProgress:progress status:nil];
 }
-
 + (void)showProgress:(float)progress maskType:(SVProgressHUDMaskType)maskType {
     SVProgressHUDMaskType existingMaskType = [self sharedView].defaultMaskType;
     [self setDefaultMaskType:maskType];
@@ -244,6 +247,7 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
 
 #pragma mark - Show, then automatically dismiss methods
 
+//显示消息信息 其实就是中心图片更换了
 + (void)showInfoWithStatus:(NSString*)status {
     [self showImage:[self sharedView].infoImage status:status];
     
@@ -260,7 +264,7 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
     [self showInfoWithStatus:status];
     [self setDefaultMaskType:existingMaskType];
 }
-
+//显示成功信息
 + (void)showSuccessWithStatus:(NSString*)status {
     [self showImage:[self sharedView].successImage status:status];
 
@@ -283,7 +287,7 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
     });
 #endif
 }
-
+//显示错误信息
 + (void)showErrorWithStatus:(NSString*)status {
     [self showImage:[self sharedView].errorImage status:status];
     
@@ -306,7 +310,7 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
     });
 #endif
 }
-
+//显示自己设置的图片 图片大小是28 * 28
 + (void)showImage:(UIImage*)image status:(NSString*)status {
     NSTimeInterval displayInterval = [self displayDurationForString:status];
     [[self sharedView] showImage:image status:status duration:displayInterval];
@@ -322,6 +326,7 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
 
 #pragma mark - Dismiss Methods
 
+//消失
 + (void)dismiss {
     [self dismissWithDelay:0.0 completion:nil];
 }
@@ -340,11 +345,11 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
 
 
 #pragma mark - Offset
-
+//据中心点的偏移量
 + (void)setOffsetFromCenter:(UIOffset)offset {
     [self sharedView].offsetFromCenter = offset;
 }
-
+//返回中心点
 + (void)resetOffsetFromCenter {
     [self setOffsetFromCenter:UIOffsetZero];
 }
@@ -1135,7 +1140,7 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
 
 
 #pragma mark - Utilities
-
+//是否正在显示
 + (BOOL)isVisible {
     // Checking one alpha value is sufficient as they are all the same
     return [self sharedView].backgroundView.alpha > 0.0f;

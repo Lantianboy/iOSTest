@@ -15,13 +15,19 @@
 #endif
 
 extern NSString * _Nonnull const SVProgressHUDDidReceiveTouchEventNotification;
+                                //在HUD外点击
 extern NSString * _Nonnull const SVProgressHUDDidTouchDownInsideNotification;
+                                //在HUD中点击
 extern NSString * _Nonnull const SVProgressHUDWillDisappearNotification;
+                                //将要显示
 extern NSString * _Nonnull const SVProgressHUDDidDisappearNotification;
+                                //已经显示
 extern NSString * _Nonnull const SVProgressHUDWillAppearNotification;
+                                //将要消失
 extern NSString * _Nonnull const SVProgressHUDDidAppearNotification;
-
+                                //已经消失
 extern NSString * _Nonnull const SVProgressHUDStatusUserInfoKey;
+                                //HUD的状态
 
 typedef NS_ENUM(NSInteger, SVProgressHUDStyle) {
     SVProgressHUDStyleLight,        // default style, white HUD with black text, HUD background will be blurred
@@ -30,10 +36,10 @@ typedef NS_ENUM(NSInteger, SVProgressHUDStyle) {
 };
 
 typedef NS_ENUM(NSUInteger, SVProgressHUDMaskType) {
-    SVProgressHUDMaskTypeNone = 1,  // default mask type, allow user interactions while HUD is displayed
-    SVProgressHUDMaskTypeClear,     // don't allow user interactions with background objects
-    SVProgressHUDMaskTypeBlack,     // don't allow user interactions with background objects and dim the UI in the back of the HUD (as seen in iOS 7 and above)
-    SVProgressHUDMaskTypeGradient,  // don't allow user interactions with background objects and dim the UI with a a-la UIAlertView background gradient (as seen in iOS 6)
+    SVProgressHUDMaskTypeNone = 1,  // default mask type, allow user interactions while HUD is displayed  允许用户进行其他用户操作
+    SVProgressHUDMaskTypeClear,     // don't allow user interactions with background objects。不允许用户进行其他用户操作
+    SVProgressHUDMaskTypeBlack,     // don't allow user interactions with background objects and dim the UI in the back of the HUD (as seen in iOS 7 and above) 不允许用户进行其他用户操作 并且背景是黑色的
+    SVProgressHUDMaskTypeGradient,  // don't allow user interactions with background objects and dim the UI with a a-la UIAlertView background gradient (as seen in iOS 6) 允许用户进行其他用户操作 并且背景是渐变的黑色
     SVProgressHUDMaskTypeCustom     // don't allow user interactions with background objects and dim the UI in the back of the HUD with a custom color
 };
 
@@ -85,15 +91,20 @@ typedef void (^SVProgressHUDDismissCompletion)(void);
 + (void)setDefaultAnimationType:(SVProgressHUDAnimationType)type;   // default is SVProgressHUDAnimationTypeFlat
 + (void)setContainerView:(nullable UIView*)containerView;           // default is window level
 + (void)setMinimumSize:(CGSize)minimumSize;                         // default is CGSizeZero, can be used to avoid resizing for a larger message
-+ (void)setRingThickness:(CGFloat)ringThickness;                    // default is 2 pt
++ (void)setRingThickness:(CGFloat)ringThickness;                    //
+
 + (void)setRingRadius:(CGFloat)radius;                              // default is 18 pt
 + (void)setRingNoTextRadius:(CGFloat)radius;                        // default is 24 pt
 + (void)setCornerRadius:(CGFloat)cornerRadius;                      // default is 14 pt
 + (void)setBorderColor:(nonnull UIColor*)color;                     // default is nil
 + (void)setBorderWidth:(CGFloat)width;                              // default is 0
-+ (void)setFont:(nonnull UIFont*)font;                              // default is [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline]
-+ (void)setForegroundColor:(nonnull UIColor*)color;                 // default is [UIColor blackColor], only used for SVProgressHUDStyleCustom
-+ (void)setBackgroundColor:(nonnull UIColor*)color;                 // default is [UIColor whiteColor], only used for SVProgressHUDStyleCustom
++ (void)setFont:(nonnull UIFont*)font;                              // default is [UIFont  preferredFontForTextStyle:UIFontTextStyleSubheadline]
++ (void)setForegroundColor:(nonnull UIColor*)color;
+//  progress 和 lable的颜色
+
++ (void)setBackgroundColor:(nonnull UIColor*)color;
+//  背景颜色
+
 + (void)setBackgroundLayerColor:(nonnull UIColor*)color;            // default is [UIColor colorWithWhite:0 alpha:0.5], only used for SVProgressHUDMaskTypeCustom
 + (void)setImageViewSize:(CGSize)size;                              // default is 28x28 pt
 + (void)setInfoImage:(nonnull UIImage*)image;                       // default is the bundled info image provided by Freepik
