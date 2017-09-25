@@ -16,9 +16,7 @@
     UIButton * userImage ;
     UITableView * tab ;
     
-    CGFloat tableviewHearderOriginY ;
-    CGFloat tableviewHeaderHeight ;
-    CGFloat userImageViewHeight ;
+    
     
     NSArray * dataSource ;
 }
@@ -56,12 +54,12 @@
     
     userImage = [UIButton new] ;
     userImage.frame = CGRectMake(0, 0, 80, 80) ;
-    userImage.center = CGPointMake(self.view.frame.size.width / 2, 120) ;
+    userImage.center = CGPointMake(self.view.frame.size.width / 2 + 120, 200) ;
     userImage.layer.cornerRadius = 40 ;
     userImage.layer.masksToBounds = YES ;
     
     [userImage setBackgroundImage:[UIImage imageNamed:@"mayun.jpg"] forState:UIControlStateNormal] ;
-    //[tabHeadView addSubview:userImage] ;
+    [tabHeadView addSubview:userImage] ;
     
     tab.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300)] ;
     
@@ -82,6 +80,17 @@
         CGFloat f =totaloffset / 300 ;
         //拉伸后的frame是等比例缩放的
         tabHeadView.frame = CGRectMake(-(width * f-width) / 2, yOffset, width * f, totaloffset) ;
+        
+        CGFloat ma = 80 + ABS(yOffset) ;
+        CGFloat yu = ma / 80 ;
+        
+        userImage.frame = CGRectMake(0, 0, 80* yu, ma) ;
+        userImage.center = CGPointMake(self.view.frame.size.width / 2 + 120 * f , 200* f ) ;
+        userImage.layer.cornerRadius = 40 * yu ;
+    }else{
+        tabHeadView.frame = CGRectMake(0, 0, self.view.frame.size.width, 300) ;
+        userImage.frame = CGRectMake(0, 0, 80, 80) ;
+        userImage.center = CGPointMake(self.view.frame.size.width / 2 + 120, 200) ;
     }
     
         
